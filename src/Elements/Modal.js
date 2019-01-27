@@ -11,49 +11,30 @@ export default class Modal extends Component {
     return (
       <Portal>
         <Transition
-          items={on}
           from={{ opacity: 0, bgOpacity: 0, y: -50 }}
           enter={{ opacity: 1, bgOpacity: 0.5, y: 0 }}
           leave={{ opacity: 0, bgOpacity: 0, y: 50 }}
         >
-          <ModalWrapper>
-            <>
-              <ModalCard
-                style={{
-                  transform: `translate3d(0, ${50}px, 0)`
-                  // ...style
-                }}
-              >
-                <CloseButton onClick={toggle}>
-                  <Icon name="close" />
-                </CloseButton>
-                <div>{children}</div>
-              </ModalCard>
-              <Background style={{ opacity: 0.5 }} onClick={toggle} />
-            </>
-          </ModalWrapper>
-          {/* {on &&
-            (style => (
+          {on &&
+            (styles => (
               <ModalWrapper>
-                <>
-                  <ModalCard
-                    style={{
-                      transform: `translate3d(0, ${style.y}px, 0)`,
-                      ...style
-                    }}
-                  >
-                    <CloseButton onClick={toggle}>
-                      <Icon name="close" />
-                    </CloseButton>
-                    <div>{children}</div>
-                  </ModalCard>
-                  <Background
-                    style={{ opacity: style.bgOpacity }}
-                    onClick={toggle}
-                  />
-                </>
+                <ModalCard
+                  style={{
+                    transform: `translate3d(0, ${styles.y}px, 0)`,
+                    ...styles
+                  }}
+                >
+                  <CloseButton onClick={toggle}>
+                    <Icon name="close" />
+                  </CloseButton>
+                  <div>{children}</div>
+                </ModalCard>
+                <Background
+                  style={{ opacity: styles.bgOpacity }}
+                  onClick={toggle}
+                />
               </ModalWrapper>
-            ))} */}
+            ))}
         </Transition>
       </Portal>
     );
