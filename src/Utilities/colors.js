@@ -1,0 +1,15 @@
+export const white = "#ffffff";
+export const lightGrey = "#f2f2f2";
+export const grey = "#d8d8d8";
+export const black = "#222";
+export const teal = "#82d8d8";
+export const purple = "#524763";
+
+export default {
+  white,
+  lightGrey,
+  grey,
+  black,
+  teal,
+  purple
+};
